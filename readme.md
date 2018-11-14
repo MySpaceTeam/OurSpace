@@ -1,4 +1,4 @@
-CSC 690 Project - OutSpace
+CSC 690 Project - OurSpace
 
 Team Members:
 
