@@ -79,7 +79,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6YW-Sg-Hm4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="8vb-LM-9hy" userLabel="Map"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map1" selectedImage="map1" id="8vb-LM-9hy" userLabel="Map"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJs-KZ-KV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +95,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TYj-pb-y2g"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="nyo-CX-fmX" userLabel="Profile"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="prof1" landscapeImage="prof1" selectedImage="prof1" id="nyo-CX-fmX" userLabel="Profile"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4j-hl-4Zh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,7 +129,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="diU-O1-0Dz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Places" id="KXp-Yx-6cN" userLabel="Places" customClass="Places"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="place1" selectedImage="place1" id="KXp-Yx-6cN" userLabel="Places" customClass="Places"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2d-JD-wtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +230,11 @@
             <point key="canvasLocation" x="-526" y="230"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map1" width="32" height="32"/>
+        <image name="place1" width="32" height="32"/>
+        <image name="prof1" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Hxs-Im-tuI"/>
     </inferredMetricsTieBreakers>
