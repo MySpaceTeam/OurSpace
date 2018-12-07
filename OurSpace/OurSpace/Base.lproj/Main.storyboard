@@ -80,6 +80,13 @@
                         <viewLayoutGuide key="safeArea" id="6YW-Sg-Hm4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map1" selectedImage="map1" id="8vb-LM-9hy" userLabel="Map"/>
+                    <navigationItem key="navigationItem" title="Title" id="hnH-A9-e9O">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jhJ-9O-T9k">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="sy7-No-b1p" id="khH-99-iOH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJs-KZ-KV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,16 +112,16 @@
         <!--Places-->
         <scene sceneID="zmb-5X-fNU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A2d-JD-wtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="a7u-LZ-z1Y" userLabel="Places" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wal-bm-r9c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="diU-O1-0Dz"/>
-                    </view>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Places" image="place1" selectedImage="place1" id="KXp-Yx-6cN" userLabel="Places" customClass="Places"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2d-JD-wtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-472.71364317841085"/>
         </scene>
@@ -216,7 +223,7 @@
         <scene sceneID="Q29-ew-UFb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qZ2-Ej-y7K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="8vb-LM-9hy"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="8vb-Lk-9hy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oZE-uv-lqt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -235,7 +242,7 @@
         <scene sceneID="CSr-K5-eVw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hSn-6S-s0H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Places" id="KXp-Yx-6cN"/>
+                    <tabBarItem key="tabBarItem" title="Places" id="KKp-Yx-6cN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="yL3-3i-VR3">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
