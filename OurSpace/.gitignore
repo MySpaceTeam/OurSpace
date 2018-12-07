@@ -1,0 +1,5 @@
+# Ignore Pod Directory
+Pods/
+
+# Podfile.lock
+Podfile.lock
