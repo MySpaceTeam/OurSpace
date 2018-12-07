@@ -7,15 +7,30 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    let center = UNUserNotificationCenter.current()
+    let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Set Google Maps API Keys
+        GMSPlacesClient.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
+        GMSServices.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
+        
+        // Notifications for Location Usage
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+        }
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.startMonitoringVisits()
+        locationManager.delegate = self
         return true
     }
 
