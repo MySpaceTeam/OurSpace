@@ -63,10 +63,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 ////        view = mapView
 //    }
 //
-    @IBAction func searchButtonPressed(_ sender: UIBarButtonItem) {
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
-
+        
         present(autocompleteController, animated: true, completion: nil)
     }
 }
