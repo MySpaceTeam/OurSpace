@@ -79,13 +79,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6YW-Sg-Hm4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xCC-LP-hZY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Dn0-02-biD">
-                            <connections>
-                                <action selector="searchButtonPressed:" destination="sy7-No-b1p" id="s5T-FP-3bv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Map" image="map1" selectedImage="map1" id="8vb-LM-9hy" userLabel="Map"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJs-KZ-KV9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +95,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TYj-pb-y2g"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="nyo-CX-fmX" userLabel="Profile"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="prof1" landscapeImage="prof1" selectedImage="prof1" id="nyo-CX-fmX" userLabel="Profile"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4j-hl-4Zh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,18 +111,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceCell" id="8qf-TM-2FN">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8qf-TM-2FN" id="0JN-cW-Fz8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Places" id="oWX-8H-Mrm"/>
+                        <viewLayoutGuide key="safeArea" id="diU-O1-0Dz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Places" image="place1" selectedImage="place1" id="KXp-Yx-6cN" userLabel="Places" customClass="Places"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1232.8" y="-472.71364317841085"/>
@@ -266,6 +251,11 @@
             <point key="canvasLocation" x="293.60000000000002" y="-472.71364317841085"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map1" width="32" height="32"/>
+        <image name="place1" width="32" height="32"/>
+        <image name="prof1" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XXt-xN-vX8"/>
     </inferredMetricsTieBreakers>
