@@ -31,6 +31,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         emailLabel.text = ""
         psswrdLabel.text = ""
         
+        if self.email.text == ""
+        {
+            self.emailLabel.text = "Please fill in e-mail field."
+        }
+        
         Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!) { (user, error) in
             if user != nil
             {
@@ -55,7 +60,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         case .userNotFound:
                             self.emailLabel.text = "E-mail does not exist."
                         case .wrongPassword:
-                            if self.psswrdLabel.text == ""
+                            if self.password.text == ""
                             {
                                 self.psswrdLabel.text = "Please fill in password field."
                             }
@@ -68,10 +73,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 
-                if self.emailLabel.text == ""
-                {
-                    self.emailLabel.text = "Please fill in e-mail field."
-                }
             }
         }
     }
