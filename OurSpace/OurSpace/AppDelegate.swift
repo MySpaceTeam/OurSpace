@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import UserNotifications
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Set Google Maps API Keys
+        
+        FirebaseApp.configure()
+        
         GMSPlacesClient.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
         GMSServices.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
         
@@ -32,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         locationManager.startMonitoringVisits()
         locationManager.delegate = self
+        
+        
         return true
     }
 

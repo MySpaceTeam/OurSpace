@@ -1,6 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
     target 'OurSpace' do
+    use_frameworks!
+
     pod 'GooglePlaces'
     pod 'GooglePlacePicker'
     pod 'GoogleMaps'
+    pod 'GoogleSignIn'
+    
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+
 end
