@@ -2,7 +2,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var confirmEmailText: UITextField!
@@ -19,6 +19,11 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailText.delegate = self
+        confirmEmailText.delegate = self
+        passwordText.delegate = self
+        confirmPasswordText.delegate = self
         
     }
 
@@ -54,13 +59,13 @@ class RegisterViewController: UIViewController {
                         switch errors
                         {
                             case .invalidEmail:
-                                self.unmatchEmail.text = "Invalid E-mail"
+                                self.unmatchEmail.text = "Invalid e-mail."
                             case .emailAlreadyInUse:
-                                self.unmatchEmail.text = "E-mail is Already in Use"
+                                self.unmatchEmail.text = "E-mail is already in use."
                             case .weakPassword:
-                                self.unmatchPsswrd.text = "Weak Password"
+                                self.unmatchPsswrd.text = "Weak Password."
                             default:
-                                print("Error Signing up")
+                                print("Error Signing Up.")
                         }
                     }
                 }
@@ -69,19 +74,28 @@ class RegisterViewController: UIViewController {
         }
         if self.emailText.text != self.confirmEmailText.text
         {
-            self.unmatchEmail.text = "The E-mails Do Not  Match"
+            self.unmatchEmail.text = "E-mail does not match."
         }
         if self.passwordText.text != self.confirmPasswordText.text
         {
-            self.unmatchPsswrd.text = "The Passwords Do Not Match!"
+            self.unmatchPsswrd.text = "Password does not match."
         }
         if self.confirmEmailText.text == "" || self.emailText.text == ""
         {
-            self.unmatchEmail.text = "Please Fill in the E-mail Fields"
+            self.unmatchEmail.text = "Please fill in e-mail fields."
         }
         if  self.confirmPasswordText.text == "" || self.passwordText.text == ""
         {
-            self.unmatchPsswrd.text = "Please Fill in the Password Fields"
+            self.unmatchPsswrd.text = "Please fill in password fields."
         }
+    }
+    
+    // UITextFieldDelegate Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailText.resignFirstResponder()
+        confirmEmailText.resignFirstResponder()
+        passwordText.resignFirstResponder()
+        confirmPasswordText.resignFirstResponder()
+        return true
     }
 }
