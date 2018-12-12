@@ -54,11 +54,11 @@ class RegisterViewController: UIViewController {
                         switch errors
                         {
                             case .invalidEmail:
-                                self.unmatchEmail.text = "invalid email"
+                                self.unmatchEmail.text = "Invalid E-mail"
                             case .emailAlreadyInUse:
-                                self.unmatchEmail.text = "email already in used"
+                                self.unmatchEmail.text = "E-mail is Already in Use"
                             case .weakPassword:
-                                self.unmatchPsswrd.text = "weak password"
+                                self.unmatchPsswrd.text = "Weak Password"
                             default:
                                 print("Error Signing up")
                         }
@@ -69,19 +69,19 @@ class RegisterViewController: UIViewController {
         }
         if self.emailText.text != self.confirmEmailText.text
         {
-            self.unmatchEmail.text = "The emails do not match!"
+            self.unmatchEmail.text = "The E-mails Do Not  Match"
         }
         if self.passwordText.text != self.confirmPasswordText.text
         {
-            self.unmatchPsswrd.text = "The passwords do not match!"
+            self.unmatchPsswrd.text = "The Passwords Do Not Match!"
         }
         if self.confirmEmailText.text == "" || self.emailText.text == ""
         {
-            self.unmatchEmail.text = "Please fill in the email fields"
+            self.unmatchEmail.text = "Please Fill in the E-mail Fields"
         }
         if  self.confirmPasswordText.text == "" || self.passwordText.text == ""
         {
-            self.unmatchPsswrd.text = "Please fill in the pass fields"
+            self.unmatchPsswrd.text = "Please Fill in the Password Fields"
         }
     }
 }

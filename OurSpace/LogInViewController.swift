@@ -44,29 +44,29 @@ class LogInViewController: UIViewController {
                     
                     switch errors
                     {
-                    case .invalidEmail:
-                        self.emailLabel.text = "invalid email"
-                    case .userDisabled:
-                        self.emailLabel.text = "user is disabled please contact support"
-                    case .userNotFound:
-                        self.emailLabel.text = "email does not exist"
-                    case .wrongPassword:
-                        if self.psswrdLabel.text == ""
-                        {
-                            self.psswrdLabel.text = "please fill in email field"
-                        }
-                        else
-                        {
-                            self.psswrdLabel.text = "wrong password"
-                        }
-                    default:
-                        print("Error Signing up")
+                        case .invalidEmail:
+                            self.emailLabel.text = "Invalid E-mail"
+                        case .userDisabled:
+                            self.emailLabel.text = "User is Disabled Please Contact Support"
+                        case .userNotFound:
+                            self.emailLabel.text = "E-mail Does Not Exist"
+                        case .wrongPassword:
+                            if self.psswrdLabel.text == ""
+                            {
+                                self.psswrdLabel.text = "Please Fill in the Password Field"
+                            }
+                            else
+                            {
+                                self.psswrdLabel.text = "Wrong Password"
+                            }
+                        default:
+                            print("Error Signing up")
                     }
                 }
                 
                 if self.emailLabel.text == ""
                 {
-                    self.emailLabel.text = "please fill in email field"
+                    self.emailLabel.text = "Please Fill in the E-mail Field"
                 }
             }
         }
