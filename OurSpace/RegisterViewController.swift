@@ -15,8 +15,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var registerButton: UIButton!
     
-//    var theTruth: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,13 +29,22 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         unmatchEmail.text = ""
         unmatchPsswrd.text = ""
         
+        if self.emailText.text != self.confirmEmailText.text
+        {
+            self.unmatchEmail.text = "E-mail does not match."
+        }
+        if self.passwordText.text != self.confirmPasswordText.text
+        {
+            self.unmatchPsswrd.text = "Password does not match."
+        }
+        if self.confirmEmailText.text == "" || self.emailText.text == ""
+        {
+            self.unmatchEmail.text = "Please fill in e-mail fields."
+        }
+        
         if
             self.emailText.text! == self.confirmEmailText.text! &&
-            self.passwordText.text! == self.confirmPasswordText.text! &&
-            self.emailText.text != "" &&
-            self.passwordText.text != "" &&
-            self.confirmEmailText.text != "" &&
-            self.confirmPasswordText.text != ""
+            self.passwordText.text! == self.confirmPasswordText.text!
         {
             Auth.auth().createUser(withEmail: self.emailText.text!, password: self.passwordText.text!) { (authResult, error) in
                 if authResult != nil
@@ -63,7 +70,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             case .emailAlreadyInUse:
                                 self.unmatchEmail.text = "E-mail is already in use."
                             case .weakPassword:
-                                self.unmatchPsswrd.text = "Weak Password."
+                                if  self.confirmPasswordText.text == "" || self.passwordText.text == ""
+                                {
+                                    self.unmatchPsswrd.text = "Please fill in password fields."
+                                }
+                                else
+                                {
+                                    self.unmatchPsswrd.text = "Weak Password."
+                                }
                             default:
                                 print("Error Signing Up.")
                         }
@@ -71,22 +85,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 }
                 guard let user = authResult?.user else {return}
             }
-        }
-        if self.emailText.text != self.confirmEmailText.text
-        {
-            self.unmatchEmail.text = "E-mail does not match."
-        }
-        if self.passwordText.text != self.confirmPasswordText.text
-        {
-            self.unmatchPsswrd.text = "Password does not match."
-        }
-        if self.confirmEmailText.text == "" || self.emailText.text == ""
-        {
-            self.unmatchEmail.text = "Please fill in e-mail fields."
-        }
-        if  self.confirmPasswordText.text == "" || self.passwordText.text == ""
-        {
-            self.unmatchPsswrd.text = "Please fill in password fields."
         }
     }
     
