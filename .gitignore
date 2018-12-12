@@ -1,0 +1,8 @@
+# Ignore Pod Directory
+Pods/
+
+# Podfile.lock
+Podfile.lock
+
+# DS_Store
+.DS_Storeø
