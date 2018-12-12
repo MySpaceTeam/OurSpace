@@ -13,15 +13,16 @@ import UserNotifications
 
 
 // Google Maps Implementation
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, UITabBarControllerDelegate, CLLocationManagerDelegate {
 
     // Global MapView
-    var mapView: GMSMapView?
+    var  mapView: GMSMapView?
     let locationManager = CLLocationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.navigationItem.title = "Add a New Place";
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -40,29 +41,74 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             mapView?.isMyLocationEnabled = true;
             
             // Set Map View as our App's View
-            view = mapView
+            self.view = mapView
+            
+            // Load in all the markers
+            for( place ) in PlaceStore.shared.favorite_places {
+                let currentLocation = CLLocationCoordinate2DMake(place.latitude!, place.longitude!)
+                let marker = GMSMarker(position: currentLocation)
+                marker.title = place.name
+                marker.snippet = place.address
+                marker.map = mapView
+            }
 
         }
 
-        self.navigationItem.title = "Add a New Place";
-
     }
     
-    // When implemented a weird bug was done where the map kept refreshing
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        // Get Current Location Value
-////        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-//
-//        // Show Current Location on Map
-////        let camera = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 15.0)
-////        // Map View
-////        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-////        mapView?.isMyLocationEnabled = true;
-////
-////        // Set Map View as our App's View
-////        view = mapView
-//    }
-//
+    func tabBar(_ tabBarController: UITabBar, didSelect viewController: UITabBarItem) {
+        print("HERE!")
+        // Remove all markers on map just in case
+        mapView?.clear()
+        
+        // Get Current Location Value
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+        
+        // Show Current Location on Map
+        let camera = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 15.0)
+        // Map View
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView?.isMyLocationEnabled = true;
+        
+        // Set Map View as our App's View
+        view = mapView
+        
+        // Load in all the markers
+        for( place ) in PlaceStore.shared.favorite_places {
+            let currentLocation = CLLocationCoordinate2DMake(place.latitude!, place.longitude!)
+            let marker = GMSMarker(position: currentLocation)
+            marker.title = place.name
+            marker.snippet = place.address
+            marker.map = mapView
+        }
+    }
+    
+    // Refresh your map
+    @IBAction func refreshButtonPressed(_ sender: Any) {
+        // Remove all markers on map just in case
+        mapView?.clear()
+
+        // Get Current Location Value
+        guard let locValue: CLLocationCoordinate2D = locationManager.location?.coordinate else { return }
+
+        // Show Current Location on Map
+        let camera = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 15.0)
+        // Map View
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView?.isMyLocationEnabled = true;
+
+        // Set Map View as our App's View
+        view = mapView
+
+        // Load in all the markers
+        for( place ) in PlaceStore.shared.favorite_places {
+            let currentLocation = CLLocationCoordinate2DMake(place.latitude!, place.longitude!)
+            let marker = GMSMarker(position: currentLocation)
+            marker.title = place.name
+            marker.snippet = place.address
+            marker.map = mapView
+        }
+    }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -70,6 +116,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         present(autocompleteController, animated: true, completion: nil)
     }
+    
+    
 }
 
 // Google Maps UI Auto Complete
@@ -77,40 +125,61 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-
-        // Save a new favorite place
+        
+        // Save off  a New Place
         let newPlace: FavoritePlace = FavoritePlace(
             place.placeID,
             place.name,
-            place.formattedAddress!,
-            place.phoneNumber!,
+            String(place.formattedAddress ?? "N/A"),
+            String(place.phoneNumber ?? "N/A"),
             place.coordinate.longitude,
             place.coordinate.latitude
         )
-
-        // Console Log new Place
-        newPlace.printMe()
         
-        // Close the autocomplete widget.
-        dismiss(animated: true, completion: nil)
+        // See if Place is already a Favorite
+        if( PlaceStore.shared.contains( newPlace.id! ) ) {
+            
+            // Dismiss Google Maps Search Bar
+            dismiss(animated: true, completion: nil)
 
-        let currentLocation = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
+            // Pop Up Alert stating that Favorite Place Already Exists, add a different one
+            let alert = UIAlertController(title: "Already a Favorite Place", message: "\(place.name) is already a favorite. Try adding a different place!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
 
-        CATransaction.begin()
-        CATransaction.setValue(2, forKey: kCATransactionAnimationDuration)
-
-        mapView?.animate(to: GMSCameraPosition.camera(withTarget: currentLocation, zoom: 15.0))
-
-        CATransaction.commit()
-
-
-        let marker = GMSMarker(position: currentLocation)
-        marker.title = "\(place.name)"
-        marker.snippet = "has been added to your favorites!"
-        marker.map = mapView
-
-        // Auto Show the Marker
-        mapView?.selectedMarker = marker
+            // Save the new place to PlaceStore for UI
+            PlaceStore.shared.add(newPlace)
+            
+            // Save to User Defaults
+            PlaceUtility.save(PlaceStore.shared.favorite_places)
+            
+            // Close the autocomplete widget.
+            dismiss(animated: true, completion: nil)
+            
+            // Get User's Location
+            let currentLocation = CLLocationCoordinate2DMake(place.coordinate.latitude, place.coordinate.longitude)
+            
+            // Animate to new Location
+            CATransaction.begin()
+            CATransaction.setValue(1, forKey: kCATransactionAnimationDuration)
+            
+            mapView?.animate(to: GMSCameraPosition.camera(withTarget: currentLocation, zoom: 15.0))
+            
+            CATransaction.commit()
+            
+            // Ser new marker
+            let marker = GMSMarker(position: currentLocation)
+            marker.title = place.name
+            marker.snippet = "has been added to your favorites!"
+            marker.map = mapView
+            
+            // Auto Show the Marker
+            mapView?.selectedMarker = marker
+        }
     }
 
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -118,6 +187,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         print("Error: ", error.localizedDescription)
     }
 
+    // Cancel Button on Search was hit
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true, completion: nil)
     }

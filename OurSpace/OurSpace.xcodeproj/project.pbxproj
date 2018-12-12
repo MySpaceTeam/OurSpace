@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36285F8521BE377500688D83 /* PlaceUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36285F8421BE377500688D83 /* PlaceUtility.swift */; };
+		365305A521C0BEB800DFAE7D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 365305A421C0BEB800DFAE7D /* Default-568h@2x.png */; };
+		3653425F21BC6FB200D3274D /* MyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653425E21BC6FB200D3274D /* MyPlacesViewController.swift */; };
+		3653426121BC7E2E00D3274D /* PlaceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3653426021BC7E2E00D3274D /* PlaceStore.swift */; };
 		3670774B21B6FAF4009D678B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670774A21B6FAF4009D678B /* MapViewController.swift */; };
+		368A274A21C0C07800F4EEE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 368A274521C0BF7A00F4EEE4 /* GoogleService-Info.plist */; };
 		369A686621B6F90000C4C471 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 369A686521B6F90000C4C471 /* Podfile */; };
 		36CEFA7521BA2077001325B6 /* FavoritePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CEFA7421BA2077001325B6 /* FavoritePlace.swift */; };
 		36DE6D0221BCA280005CFC0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DE6D0121BCA280005CFC0A /* RegisterViewController.swift */; };
-		36E8AF8A21BC96730091A176 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36E8AF8921BC96720091A176 /* GoogleService-Info.plist */; };
 		36E8AF8C21BC98360091A176 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8AF8B21BC98360091A176 /* LogInViewController.swift */; };
 		70BC267C219C93F60011FA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC267B219C93F60011FA43 /* AppDelegate.swift */; };
 		70BC267E219C93F60011FA43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC267D219C93F60011FA43 /* ViewController.swift */; };
@@ -33,11 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36285F8421BE377500688D83 /* PlaceUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUtility.swift; sourceTree = "<group>"; };
+		365305A421C0BEB800DFAE7D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3653425E21BC6FB200D3274D /* MyPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacesViewController.swift; sourceTree = "<group>"; };
+		3653426021BC7E2E00D3274D /* PlaceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceStore.swift; sourceTree = "<group>"; };
 		3670774A21B6FAF4009D678B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		368A274521C0BF7A00F4EEE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		369A686521B6F90000C4C471 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		36CEFA7421BA2077001325B6 /* FavoritePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlace.swift; sourceTree = "<group>"; };
 		36DE6D0121BCA280005CFC0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		36E8AF8921BC96720091A176 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		36E8AF8B21BC98360091A176 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		51A5B8C8F04B73B2A8553911 /* Pods_OurSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BC2678219C93F60011FA43 /* OurSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3670774A21B6FAF4009D678B /* MapViewController.swift */,
+				3653425E21BC6FB200D3274D /* MyPlacesViewController.swift */,
 				36E8AF8B21BC98360091A176 /* LogInViewController.swift */,
 				36DE6D0121BCA280005CFC0A /* RegisterViewController.swift */,
 			);
@@ -96,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				36CEFA7421BA2077001325B6 /* FavoritePlace.swift */,
+				3653426021BC7E2E00D3274D /* PlaceStore.swift */,
+				36285F8421BE377500688D83 /* PlaceUtility.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 		70BC266F219C93F60011FA43 = {
 			isa = PBXGroup;
 			children = (
+				365305A421C0BEB800DFAE7D /* Default-568h@2x.png */,
 				369A686521B6F90000C4C471 /* Podfile */,
 				3670774C21B74D2C009D678B /* Storage */,
 				3670774921B6FAD8009D678B /* ViewControllers */,
@@ -139,7 +151,7 @@
 				70BC267F219C93F60011FA43 /* Main.storyboard */,
 				70BC2682219C93F90011FA43 /* Assets.xcassets */,
 				70BC2684219C93F90011FA43 /* LaunchScreen.storyboard */,
-				36E8AF8921BC96720091A176 /* GoogleService-Info.plist */,
+				368A274521C0BF7A00F4EEE4 /* GoogleService-Info.plist */,
 				70BC2687219C93F90011FA43 /* Info.plist */,
 			);
 			path = OurSpace;
@@ -240,9 +252,10 @@
 			files = (
 				70BC2686219C93F90011FA43 /* LaunchScreen.storyboard in Resources */,
 				70BC2683219C93F90011FA43 /* Assets.xcassets in Resources */,
-				36E8AF8A21BC96730091A176 /* GoogleService-Info.plist in Resources */,
 				369A686621B6F90000C4C471 /* Podfile in Resources */,
 				70BC2681219C93F60011FA43 /* Main.storyboard in Resources */,
+				365305A521C0BEB800DFAE7D /* Default-568h@2x.png in Resources */,
+				368A274A21C0C07800F4EEE4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +278,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OurSpace/Pods-OurSpace-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -274,6 +288,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -341,12 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36285F8521BE377500688D83 /* PlaceUtility.swift in Sources */,
 				70BC267E219C93F60011FA43 /* ViewController.swift in Sources */,
 				3670774B21B6FAF4009D678B /* MapViewController.swift in Sources */,
+				3653425F21BC6FB200D3274D /* MyPlacesViewController.swift in Sources */,
 				70BC267C219C93F60011FA43 /* AppDelegate.swift in Sources */,
 				36DE6D0221BCA280005CFC0A /* RegisterViewController.swift in Sources */,
 				36E8AF8C21BC98360091A176 /* LogInViewController.swift in Sources */,
 				36CEFA7521BA2077001325B6 /* FavoritePlace.swift in Sources */,
+				3653426121BC7E2E00D3274D /* PlaceStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VCHT4VQ49;
 				INFOPLIST_FILE = OurSpace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,7 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7VCHT4VQ49;
 				INFOPLIST_FILE = OurSpace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

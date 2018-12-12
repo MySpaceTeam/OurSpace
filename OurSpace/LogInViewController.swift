@@ -2,7 +2,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -22,7 +22,11 @@ class LogInViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.layer.backgroundColor = UIColor.lightGray.cgColor
         
+        email.delegate = self
+        password.delegate = self
     }
+    
+    // Actions
     @IBAction func loginButtonPressed(_ sender: Any) {
         emailLabel.text = ""
         psswrdLabel.text = ""
@@ -45,32 +49,37 @@ class LogInViewController: UIViewController {
                     switch errors
                     {
                         case .invalidEmail:
-                            self.emailLabel.text = "Invalid E-mail"
+                            self.emailLabel.text = "Invalid e-mail."
                         case .userDisabled:
-                            self.emailLabel.text = "User is Disabled Please Contact Support"
+                            self.emailLabel.text = "User is disabled please contact support."
                         case .userNotFound:
-                            self.emailLabel.text = "E-mail Does Not Exist"
+                            self.emailLabel.text = "E-mail does not exist."
                         case .wrongPassword:
                             if self.psswrdLabel.text == ""
                             {
-                                self.psswrdLabel.text = "Please Fill in the Password Field"
+                                self.psswrdLabel.text = "Please fill in password field."
                             }
                             else
                             {
-                                self.psswrdLabel.text = "Wrong Password"
+                                self.psswrdLabel.text = "Wrong Password."
                             }
                         default:
-                            print("Error Signing up")
+                            print("Error Signing Up.")
                     }
                 }
                 
                 if self.emailLabel.text == ""
                 {
-                    self.emailLabel.text = "Please Fill in the E-mail Field"
+                    self.emailLabel.text = "Please fill in e-mail field."
                 }
             }
         }
     }
     
-
+    // UITextFieldDelegate Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+        return true
+    }
 }

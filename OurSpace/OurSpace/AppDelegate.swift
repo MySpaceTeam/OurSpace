@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
+    var placeStore = PlaceStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         GMSPlacesClient.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
         GMSServices.provideAPIKey("AIzaSyB06ZeeBNBXK_x4I2Iygm1kMeLcFr_SfUA")
         
-        // Notifications for Location Usage
+        // Notifications for Location Usage and Getting User Location
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in
         }
         locationManager.requestAlwaysAuthorization()
