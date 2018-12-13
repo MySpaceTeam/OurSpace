@@ -10,6 +10,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var psswrdLabel: UILabel!
     
@@ -22,7 +23,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         
         registerButton.layer.cornerRadius = 25
 
-        
         email.delegate = self
         password.delegate = self
     }
