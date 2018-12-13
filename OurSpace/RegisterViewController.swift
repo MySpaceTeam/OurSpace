@@ -18,6 +18,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerButton.layer.cornerRadius = 25
+        
+        
         emailText.delegate = self
         confirmEmailText.delegate = self
         passwordText.delegate = self

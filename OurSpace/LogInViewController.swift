@@ -16,11 +16,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.layer.cornerRadius = 10
-        loginButton.layer.backgroundColor = UIColor.lightGray.cgColor
+        loginButton.layer.cornerRadius = 25
+        email.layer.cornerRadius = 25
+        password.layer.cornerRadius = 25
         
-        registerButton.layer.cornerRadius = 10
-        registerButton.layer.backgroundColor = UIColor.lightGray.cgColor
+        registerButton.layer.cornerRadius = 25
+
         
         email.delegate = self
         password.delegate = self
