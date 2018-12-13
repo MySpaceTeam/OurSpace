@@ -27,7 +27,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         confirmPasswordText.delegate = self
         
     }
-
+    @IBAction func backToLogin(_ sender: Any) {
+        performSegue(withIdentifier: "registeredtologin", sender: self)
+    }
+    
     @IBAction func registerButtonPressed(_ sender: Any) {
         unmatchEmail.text = ""
         unmatchPsswrd.text = ""

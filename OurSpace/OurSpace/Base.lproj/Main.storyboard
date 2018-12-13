@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -332,6 +332,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SHh-6S-P2G" firstAttribute="top" secondItem="BFH-mb-81h" secondAttribute="bottom" constant="17" id="1GY-Br-0fu"/>
                             <constraint firstItem="jYn-8n-eaB" firstAttribute="trailing" secondItem="dw2-rB-1ag" secondAttribute="trailing" id="6G3-SV-OmD"/>
@@ -373,6 +374,9 @@
                             <constraint firstItem="viM-V6-3dP" firstAttribute="top" secondItem="2sY-ac-AlD" secondAttribute="bottom" constant="8" symbolic="YES" id="znk-ac-HiM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jLb-B1-CVB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EO3-0x-lZl" appends="YES" id="oZW-lM-s0d"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="confirmEmailText" destination="dw2-rB-1ag" id="SMm-xd-hqG"/>
@@ -386,6 +390,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L3I-mN-Rdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="EO3-0x-lZl">
+                    <connections>
+                        <action selector="backToLogin:" destination="hq5-Om-YYt" id="kmE-ZE-QTR"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2164" y="999.85007496251887"/>
         </scene>
