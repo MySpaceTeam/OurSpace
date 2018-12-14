@@ -21,6 +21,7 @@
 		703B537B21C1DB4300E6830A /* AvenirLTStd-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 703B537721C1DB4200E6830A /* AvenirLTStd-Roman.otf */; };
 		703B537C21C1DB4300E6830A /* AvenirLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 703B537821C1DB4200E6830A /* AvenirLTStd-Book.otf */; };
 		703B537D21C1DB4300E6830A /* AvenirLTStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 703B537921C1DB4200E6830A /* AvenirLTStd-Black.otf */; };
+		70B8F8B721C32B6100230DF9 /* ProfleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8F8B621C32B6100230DF9 /* ProfleViewController.swift */; };
 		70BC267C219C93F60011FA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC267B219C93F60011FA43 /* AppDelegate.swift */; };
 		70BC267E219C93F60011FA43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC267D219C93F60011FA43 /* ViewController.swift */; };
 		70BC2681219C93F60011FA43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70BC267F219C93F60011FA43 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		703B537721C1DB4200E6830A /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		703B537821C1DB4200E6830A /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
 		703B537921C1DB4200E6830A /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		70B8F8B621C32B6100230DF9 /* ProfleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfleViewController.swift; sourceTree = "<group>"; };
 		70BC2678219C93F60011FA43 /* OurSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BC267B219C93F60011FA43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70BC267D219C93F60011FA43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				3653425E21BC6FB200D3274D /* MyPlacesViewController.swift */,
 				36E8AF8B21BC98360091A176 /* LogInViewController.swift */,
 				36DE6D0121BCA280005CFC0A /* RegisterViewController.swift */,
+				70B8F8B621C32B6100230DF9 /* ProfleViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				3670774B21B6FAF4009D678B /* MapViewController.swift in Sources */,
 				3653425F21BC6FB200D3274D /* MyPlacesViewController.swift in Sources */,
 				70BC267C219C93F60011FA43 /* AppDelegate.swift in Sources */,
+				70B8F8B721C32B6100230DF9 /* ProfleViewController.swift in Sources */,
 				36DE6D0221BCA280005CFC0A /* RegisterViewController.swift in Sources */,
 				36E8AF8C21BC98360091A176 /* LogInViewController.swift in Sources */,
 				36CEFA7521BA2077001325B6 /* FavoritePlace.swift in Sources */,
